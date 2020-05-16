@@ -2868,7 +2868,7 @@ input, select, textarea {
 
 		.features .icon {
 			border-radius: 100%;
-			box-shadow: -0.5em 0.5em 1em rgba(0, 0, 0, 0.05);
+			box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.4);
 			display: block;
 			font-size: 2.75em;
 			height: 3.75em;
@@ -2876,6 +2876,7 @@ input, select, textarea {
 			margin: 0 auto 0.7em;
 			text-align: center;
 			width: 3.75em;
+			background-color: #debb7b;
 		}
 
 		.features h4 {
