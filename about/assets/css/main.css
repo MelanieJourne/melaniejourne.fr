@@ -3083,11 +3083,11 @@ input, select, textarea {
 	}
 
 	.timeline > section {
-		border-color: #bbb;
+		border-color: #9E4770;
 	}
 
 		.timeline > section:before {
-			background-color: #bbb;
+			background-color: #9E4770;
 		}
 
 	.timeline header p {
