@@ -2876,7 +2876,7 @@ input, select, textarea {
 			margin: 0 auto 0.7em;
 			text-align: center;
 			width: 3.75em;
-			background-color: #debb7b;
+			background-color: #ffffff;
 		}
 
 		.features h4 {
@@ -3145,7 +3145,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background-color: #9E4770;
-			color: #ffffff;
+			color: #9E4770;
 		}
 
 			.wrapper.style1 input, .wrapper.style1 select, .wrapper.style1 textarea {
