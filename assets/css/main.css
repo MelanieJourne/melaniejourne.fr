@@ -184,9 +184,13 @@
 		-webkit-transition: color 0.2s ease, border-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-color 0.2s ease;
 		transition: color 0.2s ease, border-color 0.2s ease;
-		color: inherit;
-		text-decoration: none;
+		color: #387dab;
 	}
+
+		a:link {
+			text-decoration: underline;
+			text-underline-offset: 5px;
+	  	}
 
 		a:before {
 			-moz-transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -196,7 +200,7 @@
 		}
 
 		a:hover {
-			color: #9e4770;
+			color: #A8004f;
 		}
 
 	strong, b {
@@ -390,7 +394,7 @@
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #9e4770;
+			border-color: #A8004f;
 		}
 
 	select {
@@ -486,13 +490,13 @@
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			color: #9e4770;
+			color: #A8004f;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #9e4770;
+			border-color: #A8004f;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -753,7 +757,7 @@
 				width: 3.75em;
 				height: 3.75em;
 				border-radius: 100%;
-				border: solid 1px #c8cccf;
+				border: solid 1px #387dab;
 				line-height: 3.75em;
 				overflow: hidden;
 				text-align: center;
@@ -776,11 +780,11 @@
 
 				ul.icons li a:before {
 					color: #ffffff;
-					text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
+					text-shadow: 1.25px 0px 0px #387dab, -1.25px 0px 0px #387dab, 0px 1.25px 0px #387dab, 0px -1.25px 0px #387dab;
 				}
 
 				ul.icons li a:hover:before {
-					text-shadow: 1.25px 0px 0px #9e4770, -1.25px 0px 0px #9e4770, 0px 1.25px 0px #9e4770, 0px -1.25px 0px #9e4770;
+					text-shadow: 1.25px 0px 0px #A8004f, -1.25px 0px 0px #A8004f, 0px 1.25px 0px #A8004f, 0px -1.25px 0px #A8004f;
 				}
 
 				ul.icons li a:before {
@@ -796,7 +800,7 @@
 				}
 
 				ul.icons li a:hover {
-					border-color: #9e4770;
+					border-color: #A8004f;
 				}
 
 		@media screen and (max-width: 480px) {
@@ -841,8 +845,8 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: #9e4770;
-			color: #9e4770 !important;
+			border-color: #A8004f;
+			color: #A8004f !important;
 		}
 
 		input[type="submit"].icon,
