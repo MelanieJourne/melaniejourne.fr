@@ -33,6 +33,7 @@
 								<li><a href="#timeline" class="scrolly">Parcours</a></li>
 								<li><a href="#qualité" class="scrolly">Applications</a></li>
 								<li><a href="#projects" class="scrolly">Projets</a></li>
+								<li><a href="#contact" class="scrolly">Contact</a></li>
 							</ul>
 							<a class="close">Close</a>
 						</div>
@@ -254,28 +255,29 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-							<!--
-						<div class="inner">
+						<div class="inner" id="contact">
 							<ul class="contact">
 								<li class="icon solid fa-home">
-									<strong>Address</strong>
-									1234 Fictional Avenue<br>Nashville, TN 00000
+									<strong>Villes privilégiées</strong>
+									Paris<br>Toulouse
 								</li>
+								<!--
 								<li class="icon solid fa-phone">
 									<strong>Phone</strong>
 									(000) 000-0000
 								</li>
+							-->
 								<li class="icon solid fa-envelope">
 									<strong>Email</strong>
-									information@untitled.tld
+									Merci d'utiliser le formulaire de contact à droite
 								</li>
 							</ul>
-							<form action="#" method="post">
-								<h4>Get in touch</h4>
+							<form id="reused_form">
+								<h4>Une idée, un projet, des questions ? Contactez-moi</h4>
 								<div class="fields">
 									<div class="field half">
-										<label for="name">Name</label>
-										<input name="name" id="name" type="text" placeholder="Name">
+										<label for="name">Nom Prénom</label>
+										<input name="name" id="name" type="text" placeholder="Nom">
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
@@ -287,11 +289,17 @@
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input value="Send Message" class="button large" type="submit"></li>
+									<li><button class="button large" type="submit">Envoyer</button>
 								</ul>
 							</form>
+							<div id="error_message" style="width:100%; height:100%; display:none; ">
+									<h4>Error</h4>
+									Désolé, un problème est survenu :(
+							</div>
+							<div id="success_message" style="width:100%; height:100%; display:none; ">
+									<h2>Message envoyé !</h2>
+							</div>
 						</div>
-						-->
 						<div class="copyright">
 							&copy; 2020. All rights reserved.
 						</div>
@@ -307,6 +315,70 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				$(function()
+				{
+				    function after_form_submitted(data)
+				    {
+				        if(data.result == 'success')
+				        {
+				            $('form#reused_form').hide();
+				            $('#success_message').show();
+				            $('#error_message').hide();
+				        }
+				        else
+				        {
+				            $('#error_message').append('<ul></ul>');
+
+				            jQuery.each(data.errors,function(key,val)
+				            {
+				                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+				            });
+				            $('#success_message').hide();
+				            $('#error_message').show();
+
+				            //reverse the response on the button
+				            $('button[type="button"]', $form).each(function()
+				            {
+				                $btn = $(this);
+				                label = $btn.prop('orig_label');
+				                if(label)
+				                {
+				                    $btn.prop('type','submit' );
+				                    $btn.text(label);
+				                    $btn.prop('orig_label','');
+				                }
+				            });
+
+				        }//else
+				    }
+
+					$('#reused_form').submit(function(e)
+				      {
+				        e.preventDefault();
+
+				        $form = $(this);
+				        //show some response on the button
+				        $('button[type="submit"]', $form).each(function()
+				        {
+				            $btn = $(this);
+				            $btn.prop('type','button' );
+				            $btn.prop('orig_label',$btn.text());
+				            $btn.text('En cours ...');
+				        });
+
+
+				                    $.ajax({
+				                type: "POST",
+				                url: 'handler.php',
+				                data: $form.serialize(),
+				                success: after_form_submitted,
+				                dataType: 'json'
+				            });
+
+				      });
+				});
+				</script>
 
 	</body>
 </html>
