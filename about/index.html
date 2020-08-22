@@ -33,7 +33,7 @@
 								<li><a href="#timeline" class="scrolly">Parcours</a></li>
 								<li><a href="#qualité" class="scrolly">Applications</a></li>
 								<li><a href="#projects" class="scrolly">Projets</a></li>
-								<li><a href="#contact" class="scrolly">Contact</a></li>
+								<!--<li><a href="#contact" class="scrolly">Contact</a></li>-->
 							</ul>
 							<a class="close">Close</a>
 						</div>
@@ -255,18 +255,17 @@
 
 				<!-- Footer -->
 					<footer id="footer">
+						<!--
 						<div class="inner" id="contact">
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									<strong>Villes privilégiées</strong>
 									Paris<br>Toulouse
 								</li>
-								<!--
 								<li class="icon solid fa-phone">
 									<strong>Phone</strong>
 									(000) 000-0000
 								</li>
-							-->
 								<li class="icon solid fa-envelope">
 									<strong>Email</strong>
 									Merci d'utiliser le formulaire de contact à droite
@@ -291,15 +290,16 @@
 								<ul class="actions">
 									<li><button class="button large" type="submit">Envoyer</button>
 								</ul>
+								<div id="error_message" style="width:100%; height:100%; display:none; ">
+										<h4>Error</h4>
+										Désolé, un problème est survenu :(
+								</div>
+								<div id="success_message" style="width:100%; height:100%; display:none; ">
+										<h2>Message envoyé !</h2>
+								</div>
 							</form>
-							<div id="error_message" style="width:100%; height:100%; display:none; ">
-									<h4>Error</h4>
-									Désolé, un problème est survenu :(
-							</div>
-							<div id="success_message" style="width:100%; height:100%; display:none; ">
-									<h2>Message envoyé !</h2>
-							</div>
 						</div>
+					-->
 						<div class="copyright">
 							&copy; 2020. All rights reserved.
 						</div>
@@ -322,7 +322,6 @@
 				    {
 				        if(data.result == 'success')
 				        {
-				            $('form#reused_form').hide();
 				            $('#success_message').show();
 				            $('#error_message').hide();
 				        }
