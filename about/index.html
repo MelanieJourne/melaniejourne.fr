@@ -33,7 +33,7 @@
 								<li><a href="#timeline" class="scrolly">Parcours</a></li>
 								<li><a href="#qualité" class="scrolly">Applications</a></li>
 								<li><a href="#projects" class="scrolly">Projets</a></li>
-								<!--<li><a href="#contact" class="scrolly">Contact</a></li>-->
+								<li><a href="#contact" class="scrolly">Contact</a></li>
 							</ul>
 							<a class="close">Close</a>
 						</div>
@@ -255,17 +255,19 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<!--
+
 						<div class="inner" id="contact">
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									<strong>Villes privilégiées</strong>
 									Paris<br>Toulouse
 								</li>
+								<!--
 								<li class="icon solid fa-phone">
 									<strong>Phone</strong>
 									(000) 000-0000
 								</li>
+							-->
 								<li class="icon solid fa-envelope">
 									<strong>Email</strong>
 									Merci d'utiliser le formulaire de contact à droite
@@ -276,15 +278,15 @@
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Nom Prénom</label>
-										<input name="name" id="name" type="text" placeholder="Nom">
+										<input name="name" id="name" type="text" placeholder="Nom" required>
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input name="email" id="email" type="email" placeholder="Email">
+										<input name="email" id="email" type="email" placeholder="Email" required>
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+										<textarea name="message" id="message" rows="6" placeholder="Message" required></textarea>
 									</div>
 								</div>
 								<ul class="actions">
@@ -299,7 +301,7 @@
 								</div>
 							</form>
 						</div>
-					-->
+
 						<div class="copyright">
 							&copy; 2020. All rights reserved.
 						</div>
@@ -367,7 +369,7 @@
 				        });
 
 
-				                    $.ajax({
+				        $.ajax({
 				                type: "POST",
 				                url: 'handler.php',
 				                data: $form.serialize(),

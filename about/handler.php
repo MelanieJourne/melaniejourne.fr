@@ -13,8 +13,8 @@ use FormGuide\Handlx\FormHandler;
 $pp = new FormHandler();
 
 $validator = $pp->getValidator();
-$validator->fields(['name','email'])->areRequired()->maxLength(50);
-$validator->field('email')->isEmail();
+$validator->field('name')->isRequired()->maxLength(50);
+$validator->field('email')->isRequired()->maxLength(50)->isEmail();
 $validator->field('message')->maxLength(6000);
 
 $pp->sendEmailTo('melaniejourne@gmail.com'); // ← Your email here
